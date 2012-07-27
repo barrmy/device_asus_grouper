@@ -22,6 +22,7 @@ endif
 
 PRODUCT_AAPT_CONFIG := normal large tvdpi hdpi
 PRODUCT_AAPT_PREF_CONFIG := tvdpi
+PRODUCT_LOCALES := en_US
 
 DEVICE_PACKAGE_OVERLAYS := \
     device/asus/grouper/overlay
@@ -51,8 +52,10 @@ PRODUCT_COPY_FILES += \
 DEVICE_PREBUILT := device/asus/grouper/prebuilt
 
 # Tell compiler to build Superuser.apk
-PRODUCT_PACKAGES := \
-        Superuser
+#PRODUCT_PACKAGES += \
+#    Superuser \
+PRODUCT_COPY_FILES += \
+	$(DEVICE_PREBUILT)/app/Superuser.apk:/system/app/Superuser.apk \
 
 # Include busybox and su binaries
 PRODUCT_COPY_FILES += \
